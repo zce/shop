@@ -23,6 +23,7 @@ import glob from 'glob'
 
 glob.sync('./controllers/*.js', { cwd: __dirname }).forEach(c => {
   const controller = require(c)
+
   router.use(controller.prefix, controller.default)
 })
 
